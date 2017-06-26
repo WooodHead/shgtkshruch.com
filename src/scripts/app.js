@@ -3,7 +3,7 @@
 import work from './work';
 import heading from './heading';
 import history from './history';
-import tippy from './tippy';
+import skill from './skill';
 
 inView.offset({
   top: 100,
@@ -18,4 +18,4 @@ $(window).scroll(() => {
 work();
 heading();
 history();
-tippy();
+skill();

@@ -7,27 +7,32 @@ section.section.skill.js-heading#skill(data-speed=0)
         span.heading__sub Adopt the latest tools and methodology.
     h2.heading__typed.js-heading-output
 
-  ul.skill__list
-    - var skills = [];
-    - skills[0] = {name: 'HTML', text: '仕様に沿ったコーディング'};
-    - skills[1] = {name: 'Pug', text: '効率的で変更に強いコーディング'};
-    - skills[2] = {name: 'CSS', text: 'レイアウトからアニメーションまで'};
-    - skills[3] = {name: 'Sass', text: '効率的で保守性の高いコーディング'};
-    - skills[4] = {name: 'PostCSS', text: 'Sassに足りない機能を補完'};
-    - skills[5] = {name: 'BEM・SMACSS', text: 'この２つを組み合わせたCSS設計'};
-    - skills[6] = {name: 'JavaScript', text: '独自のUIや演出をつくる'};
-    - skills[7] = {name: 'Babel', text: '次世代の仕様を積極的に採用'};
-    - skills[8] = {name: 'jQuery', text: 'ライブラリーを組み合わせつつ独自のプログラムも実装'};
-    - skills[9] = {name: 'React', text: 'SPAが作れるようになるべく勉強中'};
-    - skills[10] = {name: 'gulp', text: '独自のビルド環境を作成'};
-    - skills[11] = {name: 'Yeoman', text: 'コマンド１つで開発環境を生成'};
-    - skills[12] = {name: 'PHP', text: 'WordPressのテーマ制作ができる'};
-    - skills[13] = {name: 'WordPress', text: '小・中規模サイトの制作'};
-    - skills[14] = {name: 'Vagrant', text: 'VCCWを使った開発環境'};
-    - skills[15] = {name: 'Git', text: 'すべてのプロジェクトをバージョン管理'};
-    - skills[16] = {name: 'AWS', text: 'ドメイン取得やサーバーの作成'};
-    - skills[17] = {name: 'VIM', text: '素早いコーディングができるようにカスタマイズ'};
-    - skills[18] = {name: 'Chrome', text: 'パフォーマンスの計測やデバック'};
+  .skill__container
+    .skill__target.js-skill-target
+    ul.skill__list
+      - var skills = [];
+      - skills[0] = {name: 'HTML', text: '仕様に沿ったコーディング', year: 5};
+      - skills[1] = {name: 'Pug', text: '効率的で変更に強いコーディング', year: 3};
+      - skills[2] = {name: 'CSS', text: 'レイアウトからアニメーションまで', year: 5};
+      - skills[3] = {name: 'Sass', text: '効率的で保守性の高いコーディング', year: 4};
+      - skills[4] = {name: 'PostCSS', text: 'Sassに足りない機能を補完', year: 2};
+      - skills[5] = {name: 'BEM・SMACSS', text: 'この２つを組み合わせたCSS設計', year: 3};
+      - skills[6] = {name: 'JavaScript', text: '独自のUIや演出をつくる', year: 5};
+      - skills[7] = {name: 'Babel', text: '次世代の仕様を積極的に採用', year: 5};
+      - skills[8] = {name: 'jQuery', text: 'ライブラリーを組み合わせつつ独自のプログラムも実装', year: 5};
+      - skills[9] = {name: 'React', text: 'SPAが作れるようになるべく勉強中', year: 1};
+      - skills[10] = {name: 'gulp', text: '独自のビルド環境を作成', year: 3};
+      - skills[11] = {name: 'Yeoman', text: 'コマンド１つで開発環境を生成', year: 3};
+      - skills[12] = {name: 'PHP', text: 'WordPressのテーマ制作ができる', year: 3};
+      - skills[13] = {name: 'WordPress', text: '小・中規模サイトの制作', year: 3};
+      - skills[14] = {name: 'Vagrant', text: 'VCCWを使った開発環境', year: 3};
+      - skills[15] = {name: 'Git', text: 'すべてのプロジェクトをバージョン管理', year: 4};
+      - skills[16] = {name: 'AWS', text: 'ドメイン取得やサーバーの作成', year: 2};
+      - skills[17] = {name: 'VIM', text: '素早いコーディングができるようにカスタマイズ', year: 5};
+      - skills[18] = {name: 'Chrome', text: 'パフォーマンスの計測やデバック', year: 5};
 
-    each skill in skills
-      li.skill__item(class=skill.text ? 'js-tippy' : '' title=`${skill.text}`)= skill.name
+      each skill in skills
+        li.skill__item.js-skill-item(data-year=`${skill.year}`)
+          span.skill__name(data-year=`${skill.year}`)= skill.name
+          span.skill__text.text
+            span.text__content= skill.text
